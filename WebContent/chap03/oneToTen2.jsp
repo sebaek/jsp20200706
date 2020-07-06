@@ -17,6 +17,9 @@
 out.write("<h1>Hello</h1>");
 out.print("<h2>lorem</h2>");
 out.print(1+2+3+4+5+6+7+8+9+10);
+String s = null;
+out.print(s);
+//out.write(s);
 %>
 
 </body>
