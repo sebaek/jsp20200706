@@ -26,7 +26,7 @@ int num = Integer.parseInt(n);
 for (int i = 1; i <= 9; i++) {
 	//System.out.println(num + "*" + i + "=" + (num * i));
 %>
-	<li class="list-group-item">
+	<li class="list-group-item h3">
 	<%= num %>
 	<i class="fas fa-times"></i>
 	<%= i %> 
