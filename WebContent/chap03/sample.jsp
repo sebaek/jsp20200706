@@ -37,7 +37,7 @@ Set<Integer> numbers = lotto();
 	%>
 	
 		<div class="col">
-			<h1><%= num %></h1>
+			<h2><%= num %></h2>
 		</div>
 	
 	<%
