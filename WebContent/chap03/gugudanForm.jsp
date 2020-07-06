@@ -25,7 +25,7 @@
 				<form class="form-inline" action="gugudanResult.jsp">
 
 					<div class="input-group">
-						<input type="text" class="form-control form-control-lg" />
+						<input type="text" name="number" class="form-control form-control-lg" />
 						<div class="input-group-append">
 							<div class="input-group-text">단</div>
 						</div>
