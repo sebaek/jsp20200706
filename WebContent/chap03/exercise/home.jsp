@@ -1,15 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-String id = request.getParameter("id");
-String pw = request.getParameter("pw");
-
-boolean login = false;
-if (id != null && id.equals("seoul")) {
-	if (pw != null && pw.equals("jeju")) {
-		login = true;
-	}
-}
+request.setCharacterEncoding("utf-8");
 %>
 <!DOCTYPE html>
 <html>
@@ -27,16 +19,12 @@ if (id != null && id.equals("seoul")) {
 <body>
 <h1>내 프로젝트</h1>
 
-<% if (login) {
-%>
-	<h3><%= id %>님 환영합니다.</h3>
 <%
-} else {
+String id = request.getParameter("id");
 %>
+<%= id %>님 환영합니다. <br />
 <a href="login.jsp">로그인</a>
-<%
-}
-%>
+
 </body>
 </html>
 
