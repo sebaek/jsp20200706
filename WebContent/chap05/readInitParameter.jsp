@@ -1,3 +1,4 @@
+<%@page import="java.util.Enumeration"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -14,14 +15,23 @@
 <title>Insert title here</title>
 </head>
 <body>
+초기화 파라미터 목록:
+<ul>
 <%
-String logEnabled = application.getInitParameter("logEnabled");
-String debugLevel = application.getInitParameter("debugLevel");
+  Enumeration<String> initParamEnum = application.getInitParameterNames();
+  while (initParamEnum.hasMoreElements()) {
+	  String initParamName = initParamEnum.nextElement();
 %>
-<%= logEnabled %> <br />
-<%= debugLevel %> <br />
+<li><%= initParamName %> = <%=application.getInitParameter(initParamName) %> </li>
+<%
+  }
+%>
+
+</ul>
 </body>
 </html>
+
+
 
 
 
