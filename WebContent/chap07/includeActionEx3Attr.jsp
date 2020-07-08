@@ -15,6 +15,7 @@
 </head>
 <body>
 <%
+pageContext.setAttribute("name", "seoul");
 request.setAttribute("name", "jeju");
 
 %>
