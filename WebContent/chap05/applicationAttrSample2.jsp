@@ -23,15 +23,11 @@ if (l == null) {
 }
 
 ArrayList<User> list = null;
-if (l instanceof ArrayList<?>) {
-	list = (ArrayList<User>) l; 
-}
+list = (ArrayList<User>) l;
+
 if (user != null) {
 	list.add(user);
 }
-
-
-
 %>
 <!DOCTYPE html>
 <html>
@@ -52,6 +48,17 @@ if (user != null) {
 나이: <input type="number" name="age" /> <br />
 <input type="submit" value="등록"/>
 </form>
+
+<ul>
+<%
+for (User u : list) {
+	out.print("<li>");
+	out.print(u.getName() + ", " + u.getAge());
+	out.print("</li>");
+}
+%>
+</ul>
+
 </body>
 </html>
 
