@@ -14,22 +14,33 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-<jsp:include page="sample1NavBar.jsp"></jsp:include>
-
-<div class="container">
-	<div class="row">
-		<div class="col">
-			<h1>Lorem ipsum dolor.</h1>
-		</div>
-	</div>
-</div>
+	<table width="400" border="1" cellpadding="0" cellspacing="0">
+		<tr>
+			<td colspan="2">
+				<jsp:include page="top.jsp">
+					<jsp:param value="layout2" name="parent"/>
+					<jsp:param value="john" name="name"/>
+				</jsp:include>
+			</td>
+		</tr>
+		<tr>
+			<td width="100" valign="top">
+				<jsp:include page="left.jsp"></jsp:include>
+			</td>
+			<td width="300" valign="top">
+				이 부분은 layout2.jsp가 생성한다. <br />
+				레이아웃2
+				<br />
+				<br />
+				<br />
+			</td>
+			
+		</tr>
+		<tr>
+			<td colspan="2">
+				<jsp:include page="bottom.jsp"></jsp:include>
+			</td>
+		</tr>
+	</table>
 </body>
 </html>
-
-
-
-
-
-
-
