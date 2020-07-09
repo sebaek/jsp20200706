@@ -1,19 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-<script src="https://kit.fontawesome.com/a076d05399.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-
-<title>Insert title here</title>
-</head>
-<body>
-
-</body>
-</html>
+    
+<%--
+<%@ page import="chap05.User" %>
+<%
+User user2 = (User) pageContext.getAttribute("user");
+%>
+<h1><%= user2.getAge() %>살 <%= user2.getName() %>님 반갑습니다.</h1>
+ --%>
+ 
+<h1>${user.age }살 ${user.name }님 반갑습니다.</h1>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+     
