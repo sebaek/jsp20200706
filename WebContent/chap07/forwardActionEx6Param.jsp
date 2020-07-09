@@ -14,19 +14,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-pageContext.setAttribute("name", "page attr");
-request.setAttribute("name", "request attr");
-session.setAttribute("name", "session attr");
-application.setAttribute("name", "application attr");
-%>
-<jsp:forward page="forwardActionEx4Attr.jsp"></jsp:forward>
+
 </body>
 </html>
-
-
-
-
-
-
-

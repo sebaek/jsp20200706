@@ -14,6 +14,18 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h1><%= pageContext.getAttribute("name") %></h1>
+<h1><%= request.getAttribute("name") %></h1>
+<h1><%= session.getAttribute("name") %></h1>
+<h1><%= application.getAttribute("name") %></h1>
+
 
 </body>
 </html>
+
+
+
+
+
+
+

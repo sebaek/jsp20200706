@@ -14,15 +14,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-pageContext.setAttribute("name", "page attr");
-request.setAttribute("name", "request attr");
-session.setAttribute("name", "session attr");
-application.setAttribute("name", "application attr");
-%>
-<jsp:forward page="forwardActionEx4Attr.jsp"></jsp:forward>
+<h1>forward ex5 jsp</h1>
+
+<jsp:forward page="forwardActionEx6Param.jsp">
+	<jsp:param value="parameter value1" name="name1"/>
+	<jsp:param value="parameter value2" name="name2"/>
+</jsp:forward>
 </body>
 </html>
+
 
 
 
