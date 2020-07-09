@@ -14,12 +14,17 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>forward ex6 jps</h1>
-
-<h2><%=request.getParameter("name1") %></h2>
-<h2><%=request.getParameter("name2") %></h2>
+<div class="container">
+	<div class="jumbotron">
+		<h1>이 페이지는 <b>B</b> 입니다.</h1>
+	</div>
+</div>
 </body>
 </html>
+
+
+
+
 
 
 

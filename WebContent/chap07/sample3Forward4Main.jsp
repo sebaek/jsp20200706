@@ -14,12 +14,34 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>forward ex6 jps</h1>
+<h1>Main page</h1>
+<p><%= request.getParameter("name") %></p>
+<p><%= request.getParameter("vip") %></p>
 
-<h2><%=request.getParameter("name1") %></h2>
-<h2><%=request.getParameter("name2") %></h2>
+<%
+String vip = request.getParameter("vip");
+if (vip == null) {
+%>
+	<jsp:forward page="sample3Forward1Normal.jsp"></jsp:forward>
+<%
+} else {
+%>
+	<jsp:forward page="sample3Forward2VIP.jsp"></jsp:forward>
+<% 
+}
+%>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
 
 
 

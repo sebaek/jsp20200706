@@ -14,12 +14,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>forward ex6 jps</h1>
-
-<h2><%=request.getParameter("name1") %></h2>
-<h2><%=request.getParameter("name2") %></h2>
+<form action="sample3Forward4Main.jsp">
+	name: <input type="text" name="name"> <br />
+	vip: <input type="checkbox" name="vip"> <br />
+	<input type="submit" value="로그인" />
+</form>
 </body>
 </html>
+
+
 
 
 

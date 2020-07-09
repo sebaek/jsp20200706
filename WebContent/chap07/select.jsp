@@ -14,12 +14,20 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>forward ex6 jps</h1>
+<form action="<%= request.getContextPath()%>/chap07/view.jsp">
+보고 싶은 페이지 선택:
+<select name="code" id="">
+	<option value="A">A 페이지</option>
+	<option value="B">B 페이지</option>
+	<option value="C">C 페이지</option>
+</select>
 
-<h2><%=request.getParameter("name1") %></h2>
-<h2><%=request.getParameter("name2") %></h2>
+<input type="submit" value="이동" />
+</form>
 </body>
 </html>
+
+
 
 
 

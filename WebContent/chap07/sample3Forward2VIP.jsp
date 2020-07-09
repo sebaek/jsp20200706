@@ -14,12 +14,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>forward ex6 jps</h1>
-
-<h2><%=request.getParameter("name1") %></h2>
-<h2><%=request.getParameter("name2") %></h2>
+<h1>VIP page</h1>
 </body>
 </html>
+
+
+
+
 
 
 
