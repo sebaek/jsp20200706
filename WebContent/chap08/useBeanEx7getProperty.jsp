@@ -23,6 +23,8 @@
 <h1>
 <jsp:getProperty property="firstName" name="member" />
 </h1>
+<h1>${member.name }</h1>
+<h1>${member.firstName }</h1>
 
 
 </body>
