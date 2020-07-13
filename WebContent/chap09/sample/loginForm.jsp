@@ -8,6 +8,13 @@ if (id != null & pw != null) {
 	if (id.equals(pw)) {
 		session.setAttribute("member", id);
 	}
+	
+	String keep = request.getParameter("keep");
+	if (keep != null) {
+		Cookie cookie = new Cookie("JSESSIONID", session.getId());
+		cookie.setMaxAge(30*60);
+		response.addCookie(cookie);
+	}
 }
 
 %>
@@ -36,6 +43,7 @@ if (o == null) {
 <form action="" method="post">
 id: <input type="text" name="id" > <br />
 pw: <input type="password" name="pw"> <br />
+<input type="checkbox" name="keep"/> 로그인 유지 <br />
 <input type="submit" value="로그인"/>
 </form>
 <%
