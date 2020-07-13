@@ -1,14 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%
-Object member = session.getAttribute("member");
-
-if (member == null) {
-//	String path = request.getContextPath() + "/sample/loginForm.jsp";
-//	response.sendRedirect(path);
-	response.sendRedirect("loginForm.jsp");
-} else {
-%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,21 +14,14 @@ if (member == null) {
 <title>Insert title here</title>
 </head>
 <body>
-<h1>멤버 전용 페이지</h1>
-<a href="logout.jsp">로그아웃</a>
+<form action="<%= request.getContextPath() %>/chap10/sessionLogin.jsp" method="post">
+아이디 <input type="text" name="id" size="10">
+암호 <input type="password" name="password" size="10">
+<input type="submit" value="로그인" />
 
+</form>
 </body>
 </html>
-<%
-}
-%>
-
-
-
-
-
-
-
 
 
 

@@ -1,13 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-Object member = session.getAttribute("member");
+String id = request.getParameter("id");
+String password = request.getParameter("password");
 
-if (member == null) {
-//	String path = request.getContextPath() + "/sample/loginForm.jsp";
-//	response.sendRedirect(path);
-	response.sendRedirect("loginForm.jsp");
-} else {
+if (id.equals(password)) {
+	session.setAttribute("MEMBERID", id);
+
 %>
 <!DOCTYPE html>
 <html>
@@ -23,24 +22,19 @@ if (member == null) {
 <title>Insert title here</title>
 </head>
 <body>
-<h1>멤버 전용 페이지</h1>
-<a href="logout.jsp">로그아웃</a>
-
+로그인에 성공했습니다.
 </body>
 </html>
 <%
+} else {
+%>
+<script>
+alert("로그인에 실패하였습니다");
+history.go(-1);
+</script>
+<%
 }
 %>
-
-
-
-
-
-
-
-
-
-
 
 
 

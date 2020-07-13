@@ -26,6 +26,7 @@ if (id != null && pw != null) {
 <body>
 
 <h1>로그인</h1>
+<h1>session id <%= session.getId() %></h1>
 
 <%
 if (session.getAttribute("member") == null) {
