@@ -12,6 +12,7 @@ if (id != null & pw != null) {
 	String keep = request.getParameter("keep");
 	if (keep != null) {
 		Cookie cookie = new Cookie("JSESSIONID", session.getId());
+		cookie.setPath(request.getContextPath());
 		cookie.setMaxAge(30*60);
 		response.addCookie(cookie);
 	}
