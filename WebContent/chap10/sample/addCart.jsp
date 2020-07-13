@@ -4,14 +4,20 @@
 <%
 Object o = session.getAttribute("cart");
 if (o == null) {
-	Set<String> cart = new HashSet<>();
+	Map<String, Integer> cart = new HashMap<>();
 	session.setAttribute("cart", cart);
 }
 
 String prod = request.getParameter("prod");
 if (prod != null) {
-	Set<String> cart = (Set<String>) session.getAttribute("cart");
-	cart.add(prod);
+	Map<String, Integer> cart = (Map<String, Integer>) session.getAttribute("cart");
+	
+	if (cart.containsKey(prod)) {
+		Integer value = cart.get(prod);
+		cart.put(prod, value + 1);
+	} else {
+		cart.put(prod, 1);
+	}
 }
 %>
 <!DOCTYPE html>

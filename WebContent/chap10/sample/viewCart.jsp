@@ -20,10 +20,11 @@
 <%
 Object o = session.getAttribute("cart");
 if (o != null) {
-	Set<String> cart = (Set<String>) o;
-	for (String prod : cart) {
+	Map<String, Integer> cart = (Map<String, Integer>) o;
+	for (String prod : cart.keySet()) {
 		out.print("<li>");
 		out.print(prod);
+		out.print(cart.get(prod) + "개");
 		out.print("</li>");
 	}
 }
