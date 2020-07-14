@@ -16,9 +16,9 @@
 <body>
 <h1>비교 연산자</h1>
 <form action="" method="post">
-num1 : <input type="text" name="num1" />
-num2 : <input type="text" name="num2" />
-<input type="submit" value="비교" />
+num1 : <input type="text" name="num1" value="${param.num1 }" /> <br />
+num2 : <input type="text" name="num2" value="${param.num2 }" /> <br />
+<input type="submit" value="비교" /> <br />
 </form>
 <h1>크다 greater than</h1>
 <h2>${param.num1 > param.num2 }</h2>
