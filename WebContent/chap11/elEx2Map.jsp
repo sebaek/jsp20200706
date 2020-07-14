@@ -16,6 +16,10 @@
 <body>
 <%--
 el의 pageScope: page영역의 attribute를 <key, value>로 저장한 Map
+
+Map 사용법
+${map.key}
+${map["key"]}
 --%>
 <%
 pageContext.setAttribute("key1", "value1");
@@ -41,7 +45,7 @@ ${pageScope["5key"] }
 </h1>
 
 <h1>
-${cookie.JSESSIONID }, ${cookie["JESSSIONID"] }
+${cookie.JSESSIONID }, ${cookie["JSESSIONID"] }
 </h1>
 </body>
 </html>
