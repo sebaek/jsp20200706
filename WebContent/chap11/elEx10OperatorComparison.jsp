@@ -23,6 +23,11 @@ num2 : <input type="text" name="num2" value="${param.num2 }" /> <br />
 <h1>크다 greater than</h1>
 <h2>${param.num1 > param.num2 }</h2>
 <h2>${param.num1 gt param.num2 }</h2>
+\${"10" + "7" } : ${"10" + "7" } <br />
+\${"10" > "7" } : ${"10" > "7" } <br />
+\${"10" > 7 } : ${"10" > 7 } <br />
+\${10 > "7" } : ${10 > "7" } <br />
+
 
 <h1>작다 less than</h1>
 <h2>${param.num1 < param.num2 }</h2>
