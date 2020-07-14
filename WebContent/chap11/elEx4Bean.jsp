@@ -22,6 +22,12 @@ m.setId(100);
 <title>Insert title here</title>
 </head>
 <body>
+<%--
+객체의 getProperty 메소드 사용
+${object.property} => object.getProperty()
+
+
+--%>
 <%
 request.setAttribute("attr1", "value1");
 request.setAttribute("myBean", m);
