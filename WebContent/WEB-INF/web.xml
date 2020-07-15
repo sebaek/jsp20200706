@@ -25,6 +25,16 @@
   <session-config>
   	<session-timeout>60</session-timeout>
   </session-config>
+  
+  <servlet>
+    <servlet-name>myservlet</servlet-name>
+  	<servlet-class>chap12.MyServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>myservlet</servlet-name>
+    <url-pattern>/myservlet</url-pattern>
+  </servlet-mapping>
 </web-app>
 
 
