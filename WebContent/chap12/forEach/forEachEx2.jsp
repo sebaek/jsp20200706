@@ -16,34 +16,32 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="" method="post">
-이름: <input type="text" name="name"/> <br />
-나이: <input type="number" name="age" /> <br />
-<input type="submit" value="확인"/>
+<%
+String[] arr = {"java", "html", "css", "jquery", "bootstrap"};
+request.setAttribute("list", arr);
+%>
+<c:forEach var="item" items="${list }">
+	${item } <br />
+</c:forEach>
+${item }
+<hr />
 
-<c:if test="${empty param.name }">
-<p>이름을 입력하세요</p>
-</c:if>
-<c:if test="${empty param.age }" >
-<p>나이를 입력하세요</p>
-</c:if>
+<c:forEach var="item" items="${list }" begin="1" end="3">
+	${item } <br />
+</c:forEach>
+<hr />
+<c:forEach var="item" items="${list }" step="2">
+	${item } <br />
+</c:forEach>
 
-<c:if test="${param.age > 18 }" >
-<p>투표 가능</p>
-</c:if>
-<c:if test="${param.age <= 18 }" var="test">
-<p>투표 불가능</p>
-</c:if>
-
-
-<c:if test="${test }" >
-<p>투표 불가능 again</p>
-</c:if>
-<%= pageContext.getAttribute("test") %>
-
-</form>
 </body>
 </html>
+
+
+
+
+
+
 
 
 

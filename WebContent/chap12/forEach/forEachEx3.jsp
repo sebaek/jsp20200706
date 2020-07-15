@@ -16,32 +16,20 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="" method="post">
-이름: <input type="text" name="name"/> <br />
-나이: <input type="number" name="age" /> <br />
-<input type="submit" value="확인"/>
-
-<c:if test="${empty param.name }">
-<p>이름을 입력하세요</p>
-</c:if>
-<c:if test="${empty param.age }" >
-<p>나이를 입력하세요</p>
-</c:if>
-
-<c:if test="${param.age > 18 }" >
-<p>투표 가능</p>
-</c:if>
-<c:if test="${param.age <= 18 }" var="test">
-<p>투표 불가능</p>
-</c:if>
+<%
+Map<String, String> map = new HashMap<>();
+map.put("key1", "value1");
+map.put("key2", "value2");
+map.put("key3", "value3");
+map.put("key4", "value4");
+request.setAttribute("map", map);
+%>
+<c:forEach var="entry" items="${map }">
+${entry.key }, ${entry.value } <br />
+</c:forEach>
 
 
-<c:if test="${test }" >
-<p>투표 불가능 again</p>
-</c:if>
-<%= pageContext.getAttribute("test") %>
 
-</form>
 </body>
 </html>
 

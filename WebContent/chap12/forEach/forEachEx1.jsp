@@ -16,34 +16,40 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="" method="post">
-이름: <input type="text" name="name"/> <br />
-나이: <input type="number" name="age" /> <br />
-<input type="submit" value="확인"/>
+<%--
+<c:forEach >
 
-<c:if test="${empty param.name }">
-<p>이름을 입력하세요</p>
-</c:if>
-<c:if test="${empty param.age }" >
-<p>나이를 입력하세요</p>
-</c:if>
+</c:forEach>
 
-<c:if test="${param.age > 18 }" >
-<p>투표 가능</p>
-</c:if>
-<c:if test="${param.age <= 18 }" var="test">
-<p>투표 불가능</p>
-</c:if>
+# attributes (책 306 쪽)
+var
+items
+varStatus
+begin
+end
+step 
+ --%>
 
+<c:forEach var="i" begin="1" end="3">
+	${i } <br />
+</c:forEach>
 
-<c:if test="${test }" >
-<p>투표 불가능 again</p>
-</c:if>
-<%= pageContext.getAttribute("test") %>
+<c:forEach var="i" begin="1" end="10" step="2">
+	${i } <br />
+</c:forEach>  
 
-</form>
+ 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
 
 
 
