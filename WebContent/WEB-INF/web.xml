@@ -35,6 +35,55 @@
     <servlet-name>myservlet</servlet-name>
     <url-pattern>/myservlet</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>servletEx1</servlet-name>
+  	<servlet-class>chap17.ServletEx1</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>servletEx1</servlet-name>
+  	<url-pattern>/servletex1</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>now</servlet-name>
+  	<servlet-class>chap17.NowServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>now</servlet-name>
+  	<url-pattern>/now</url-pattern>
+  </servlet-mapping>
+
+  
+  <servlet-mapping>
+  	<servlet-name>now</servlet-name>
+  	<url-pattern>/foo/bar/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+  	<servlet-name>now</servlet-name>
+  	<url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>now</servlet-name>
+  	<url-pattern>/</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+  	<servlet-name>servlet1</servlet-name>
+  	<servlet-class>chap17.path.UrlPathEx1</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>servlet2</servlet-name>
+  	<servlet-class>chap17.path.UrlPathEx2</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>servlet3</servlet-name>
+  	<servlet-class>chap17.path.UrlPathEx3</servlet-class>
+  </servlet>
 </web-app>
 
 
