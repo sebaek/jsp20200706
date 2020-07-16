@@ -76,6 +76,7 @@
   <servlet-mapping>
   	<servlet-name>servlet2</servlet-name>
   	<url-pattern>/foo/bar</url-pattern>
+  	<url-pattern>/poo/var</url-pattern>
   </servlet-mapping>
   
   <servlet-mapping>
