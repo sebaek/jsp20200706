@@ -83,6 +83,48 @@
   	<servlet-name>servlet3</servlet-name>
   	<url-pattern>/foo/*</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>initmethod1</servlet-name>
+  	<servlet-class>chap17.InitMethodEx1</servlet-class>
+  	<load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <servlet>
+  	<servlet-name>initmethod2</servlet-name>
+  	<servlet-class>chap17.InitMethodEx2</servlet-class>
+  	<load-on-startup>2</load-on-startup>
+  </servlet>
+  
+  <servlet>
+  	<servlet-name>initparam servlet</servlet-name>
+  	<servlet-class>chap17.InitParamServletEx1</servlet-class>
+  	<init-param>
+  		<param-name>name1</param-name>
+  		<param-value>value1</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>name4</param-name>
+  		<param-value>value4</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>jdbcUrl1</param-name>
+  		<param-value>
+  		jdbc:mysql://localhost:3306/chap14?characterEncoding=utf8&amp;name=p
+  		</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>jdbcUrl2</param-name>
+  		<param-value>
+  		jdbc:mysql://localhost:3306/chap14?characterEncoding=utf8&amp;name=p
+  		</param-value>
+  	</init-param>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>initparam servlet</servlet-name>
+  	<url-pattern>/test/init</url-pattern>
+  </servlet-mapping>
 </web-app>
 
 
