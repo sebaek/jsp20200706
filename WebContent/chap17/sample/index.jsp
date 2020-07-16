@@ -28,7 +28,7 @@ pw: <input type="password" name="pw" /> <br />
 
 <c:if test="${not empty user }"> 
 ${user }님 반갑습니다. <br />
-
+<a href="${pageContext.request.contextPath }/sample/logout">로그아웃</a>
 </c:if>
 </body>
 </html>
