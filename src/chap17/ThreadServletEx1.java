@@ -35,9 +35,9 @@ public class ThreadServletEx1 extends HttpServlet {
 		member.setName("name");
 		
 		/*
-		request
-		session
-		application
+		request : 안전
+		session : 안전한 편
+		application : 안전하지 않음
 		*/
 		
 		
