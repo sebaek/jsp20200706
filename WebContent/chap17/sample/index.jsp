@@ -16,22 +16,20 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>등록 폼</h1>
-<form action="" method="post">
-	이름: <input type="text" name="name"> <br />
-	나이: <input type="number" name="age"> <br />
-	<input type="submit" value="등록"/>
+<h1>Main Page</h1>
+
+<c:if test="${empty user }" >
+<form action="${pageContext.request.contextPath }/sample/login" method="post">
+id: <input type="text" name="id" /> <br />
+pw: <input type="password" name="pw" /> <br />
+<input type="submit" value="로그인"/>
 </form>
-${pageContext.request.method }
-<hr />
-<c:if test="${not empty list }">
-	<ul>
-		<c:forEach var="item" items="${list }">
-			<li>${item.name }, ${item.age }</li>
-		</c:forEach>
-	</ul>
 </c:if>
 
+<c:if test="${not empty user }"> 
+${user }님 반갑습니다. <br />
+
+</c:if>
 </body>
 </html>
 
