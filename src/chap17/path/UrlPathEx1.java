@@ -26,6 +26,20 @@ import javax.servlet.http.HttpServletResponse;
  * 4. 기본 서블릿 
  * 
  */
+/*
+ **** 실습 ****
+/blue.do :servlet1
+/foo/bar : servlet2
+/foo/bar/blue.do : servlet3
+/foo/blue.do : servlet3
+/fred/blue.do :servlet1
+/foo : servlet3
+/foo/bar/foo.fo :servlet3
+/fred/blue.fo : page not found
+
+
+
+ */
 
 public class UrlPathEx1 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
