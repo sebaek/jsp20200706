@@ -125,6 +125,36 @@
   	<servlet-name>initparam servlet</servlet-name>
   	<url-pattern>/test/init</url-pattern>
   </servlet-mapping>
+  
+  <filter>
+  	<filter-name>filterex1</filter-name>
+  	<filter-class>chap19.FilterEx1</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>filterex2</filter-name>
+  	<servlet-name>ServletEx1</servlet-name>
+  </filter-mapping>
+  
+  <filter-mapping>
+  	<filter-name>filterex1</filter-name>
+  	<servlet-name>ServletEx1</servlet-name>
+  </filter-mapping>
+  
+  <filter>
+  	<filter-name>filterex2</filter-name>
+  	<filter-class>chap19.FilterEx2</filter-class>
+  </filter>
+  
+  
+  <servlet>
+  	<servlet-name>ServletEx1</servlet-name>
+  	<servlet-class>chap19.ServletEx1</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>ServletEx1</servlet-name>
+  	<url-pattern>/chap19/filterex1</url-pattern>
+  </servlet-mapping>
 </web-app>
 
 
