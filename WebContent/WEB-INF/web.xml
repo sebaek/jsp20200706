@@ -155,7 +155,29 @@
   	<servlet-name>ServletEx1</servlet-name>
   	<url-pattern>/chap19/filterex1</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>vipservlet1</servlet-name>
+  	<servlet-class>chap19.sample.VIPFilterEx1Servlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+	<servlet-name>vipservlet1</servlet-name>
+	<url-pattern>/chap19/vip/*</url-pattern>  
+  </servlet-mapping>
+  
+  <filter>
+  	<filter-name>checkLogIn</filter-name>
+  	<filter-class>chap19.sample.LogInFilterEx1</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>checkLogIn</filter-name>
+  	<servlet-name>vipservlet1</servlet-name>
+  </filter-mapping>
 </web-app>
+
+
+
 
 
 
