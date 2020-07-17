@@ -174,7 +174,30 @@
   	<filter-name>checkLogIn</filter-name>
   	<servlet-name>vipservlet1</servlet-name>
   </filter-mapping>
+  
+  <servlet>
+  	<servlet-name>chap19/servlet3</servlet-name>
+  	<servlet-class>chap19.ServletEx3</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>chap19/servlet3</servlet-name>
+  	<url-pattern>/chap19/servletex3</url-pattern>
+  </servlet-mapping>
+  
+  <filter>
+  	<filter-name>chap19/filter3</filter-name>
+  	<filter-class>chap19.FilterEx3</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>chap19/filter3</filter-name>
+  	<servlet-name>chap19/servlet3</servlet-name>
+  </filter-mapping>
 </web-app>
+
+
+
+
+
 
 
 
