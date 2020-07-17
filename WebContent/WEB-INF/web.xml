@@ -192,7 +192,7 @@
   	<filter-name>chap19/filter3</filter-name>
   	<servlet-name>chap19/servlet3</servlet-name>
   </filter-mapping>
-  
+  <!-- 
   <filter>
   	<filter-name>NullParameter</filter-name>
   	<filter-class>chap19.NullParameterFilter</filter-class>
@@ -206,7 +206,23 @@
   	<filter-name>NullParameter</filter-name>
   	<url-pattern>*.jsp</url-pattern>
   </filter-mapping>
+   -->
+  <filter>
+  	<filter-name>encodingFilter</filter-name>
+  	<filter-class>chap19.CharacterEncodingFilter</filter-class>
+  	
+  	<init-param>
+  		<param-name>encoding</param-name>
+  		<param-value>utf-8</param-value>
+  	</init-param>
+  </filter> 
+  <filter-mapping>
+  	<filter-name>encodingFilter</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>   
+   
 </web-app>
+
 
 
 
