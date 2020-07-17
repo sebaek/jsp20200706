@@ -192,6 +192,20 @@
   	<filter-name>chap19/filter3</filter-name>
   	<servlet-name>chap19/servlet3</servlet-name>
   </filter-mapping>
+  
+  <filter>
+  	<filter-name>NullParameter</filter-name>
+  	<filter-class>chap19.NullParameterFilter</filter-class>
+  	
+  	<init-param>
+  		<param-name>parameterNames</param-name>
+  		<param-value>id,name</param-value>
+  	</init-param>
+  </filter>
+  <filter-mapping>
+  	<filter-name>NullParameter</filter-name>
+  	<url-pattern>*.jsp</url-pattern>
+  </filter-mapping>
 </web-app>
 
 
