@@ -18,7 +18,11 @@
 </head>
 <body>
 
-<my:navbar addClass="navbar-light bg-light" />
+<my:navbar 
+addClass="navbar-light bg-light" 
+menu1="Home" 
+menu2="Link1" 
+menu3="Link2"/>
 
 <div class="container">
 	<div class="row">
