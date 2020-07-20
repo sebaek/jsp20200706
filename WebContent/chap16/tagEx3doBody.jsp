@@ -17,43 +17,16 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>태그 body scriptless</h1>
-<my:tagEx1body>
-	<p>hello world 1 </p>
-	${pageContext.request.contextPath }
-	<jsp:include page="includeEx3.jsp"></jsp:include>
-	<%--
-	<%
-	Object o = new Object();
-	out.print(o);
-	%>
-	<%= o %>
-	<%!
-	int i = 0;
-	%>
-	 --%>
-</my:tagEx1body>
+<h1>doBody</h1>
 
-<h1>태그 tagdependent</h1>
-<my:tagEx2body>
-	<p>hello world 2</p>
-	${pageContext.request.contextPath }
-	<jsp:include page="includeEx3.jsp"></jsp:include>
-	<%
-	Object o = new Object();
-	out.print(o);
-	%>
-	<%= o %>
-	<%!
-	int i = 0;
-	%>
-</my:tagEx2body>
+<c:set var="x" value="${5 }" />
 
-<my:tagEx1body />
-<my:tagEx2body />
+<my:tagEx3body>
+	${x }
+	<c:set var="x" value="${x + 1 }" />
+</my:tagEx3body>
 </body>
 </html>
-
 
 
 

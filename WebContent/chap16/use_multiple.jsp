@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="my" tagdir="/WEB-INF/tags/chap16" %>
@@ -17,46 +17,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>태그 body scriptless</h1>
-<my:tagEx1body>
-	<p>hello world 1 </p>
-	${pageContext.request.contextPath }
-	<jsp:include page="includeEx3.jsp"></jsp:include>
-	<%--
-	<%
-	Object o = new Object();
-	out.print(o);
-	%>
-	<%= o %>
-	<%!
-	int i = 0;
-	%>
-	 --%>
-</my:tagEx1body>
+<c:set var="num" value="${1 }" />
 
-<h1>태그 tagdependent</h1>
-<my:tagEx2body>
-	<p>hello world 2</p>
-	${pageContext.request.contextPath }
-	<jsp:include page="includeEx3.jsp"></jsp:include>
-	<%
-	Object o = new Object();
-	out.print(o);
-	%>
-	<%= o %>
-	<%!
-	int i = 0;
-	%>
-</my:tagEx2body>
+<my:multiple count="10">
+	${num } <br />
+	<c:set var="num" value="${num + 1 }" />
+</my:multiple>
 
-<my:tagEx1body />
-<my:tagEx2body />
 </body>
 </html>
-
-
-
-
 
 
 
