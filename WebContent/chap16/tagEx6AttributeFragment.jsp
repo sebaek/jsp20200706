@@ -17,12 +17,26 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>구구단</h1>
+<h1>simple attribute</h1>
+<my:gugudan dan="2" />
 
-<my:gugudan dan="4" />
+<h1>complex attribute</h1>
+<my:tagEx6 >
+	<jsp:attribute name="attr">
+		<p>hello world</p>
+	</jsp:attribute>
+	<jsp:attribute name="attr2">
+		<p>hello attribute 2</p>
+	</jsp:attribute>
+</my:tagEx6>
 
 </body>
 </html>
+
+
+
+
+
 
 
 
