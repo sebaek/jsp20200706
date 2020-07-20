@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<%@ taglib prefix="tf" tagdir="/WEB-INF/tags/chap16" %>
+<%@ taglib prefix="my" tagdir="/WEB-INF/tags/chap16" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,9 +17,40 @@
 <title>Insert title here</title>
 </head>
 <body>
-오늘은 <b><tf:now /> </b> 입니다.
+<h1>태그 body scriptless</h1>
+<my:tagEx1body>
+	<p>hello world 1 </p>
+	${pageContext.request.contextPath }
+	<jsp:include page="includeEx3.jsp"></jsp:include>
+	<%--
+	<%
+	Object o = new Object();
+	out.print(o);
+	%>
+	<%= o %>
+	<%!
+	int i = 0;
+	%>
+	 --%>
+</my:tagEx1body>
+
+<h1>태그 tagdependent</h1>
+<my:tagEx2body>
+	<p>hello world 2</p>
+	${pageContext.request.contextPath }
+	<jsp:include page="includeEx3.jsp"></jsp:include>
+	<%
+	Object o = new Object();
+	out.print(o);
+	%>
+	<%= o %>
+	<%!
+	int i = 0;
+	%>
+</my:tagEx2body>
 </body>
 </html>
+
 
 
 
