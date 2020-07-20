@@ -1,4 +1,5 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
+<%@ tag dynamic-attributes="menus" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ attribute name="addClass" %>
@@ -11,12 +12,19 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
+		<c:forEach items="${menus}" var="menu"> 
+			<li class="nav-item">
+			<a href="#" class="nav-link">${menu.value }</a>
+			</li>
+		</c:forEach>    
+    <%--
       <li class="nav-item active">
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Link</a>
       </li>
+     --%>
       
     </ul>
     <form class="form-inline my-2 my-lg-0">
