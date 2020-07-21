@@ -3,6 +3,7 @@ package myapp;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
@@ -62,26 +63,25 @@ public class SignUpServlet extends HttpServlet {
 			Connection con = DriverManager.getConnection("jdbc:apache:commons:dbcp:test1");
 
 			// 3. statement 생성
-//			PreparedStatement ps = con.prepareStatement(sql);
-			Statement stmt = con.createStatement();
+			String sql = "INSERT INTO member (email, password, name, age)" 
+					+ " VALUES (?, ?, ?, ?)";
+			PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+//			Statement stmt = con.createStatement();
 
 			// 4. 쿼리 실행
-//			ps.setString(1, email);
-//			ps.setString(2, password);
-//			ps.setString(3, name);
-//			ps.setInt(4, age);
+			ps.setString(1, email);
+			ps.setString(2, password);
+			ps.setString(3, name);
+			ps.setInt(4, age);
 
-			String sql = "INSERT INTO member (email, password, name, age)" 
-				+ " VALUES ('" + email + "', '" + password + "', '"
-				+ name + "', " + age + ")";
-			int cnt = stmt.executeUpdate(sql, new String[]{"id"});
+			int cnt = ps.executeUpdate();
 
 			// 5. 결과 처리
 			if (cnt == 1) {
 				// 정상
 				System.out.println("정상 입력");
 				
-				ResultSet rs = stmt.getGeneratedKeys();
+				ResultSet rs = ps.getGeneratedKeys();
 				
 				if (rs.next()) {
 //					System.out.println("id: " + rs.getInt(1));
@@ -107,7 +107,7 @@ public class SignUpServlet extends HttpServlet {
 			}
 
 			// 6. 자원 종료
-			stmt.close();
+			ps.close();
 			con.close();
 
 		} catch (Exception e) {
