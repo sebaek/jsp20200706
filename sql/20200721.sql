@@ -42,7 +42,12 @@ update money set money =
 where id=2;
 select * from money;
 
+alter table member add column (
+email varchar(255) not null,
+password varchar(255) not null
+);
 
+select * from member;
 
 
 
