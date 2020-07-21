@@ -43,12 +43,11 @@ where id=2;
 select * from money;
 
 alter table member add column (
-email varchar(255) not null,
-password varchar(255) not null
+	email varchar(255) not null,
+    password varchar(255) not null
 );
+select * from member order by id desc;
 
-select * from member;
-
-
+update member set name='jane';
 
 
