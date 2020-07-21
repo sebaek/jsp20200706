@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class SignUpServlet
@@ -75,7 +76,15 @@ public class SignUpServlet extends HttpServlet {
 			if (cnt == 1) {
 				// 정상
 				System.out.println("정상 입력");
-				response.sendRedirect("main");
+				Member mem = new Member();
+				mem.setAge(age);
+				mem.setName(name);
+				mem.setEmail(email);
+				
+				HttpSession session = request.getSession();
+				session.setAttribute("member", mem);
+				
+				response.sendRedirect("member");
 			} else {
 				// 오류
 				System.out.println("입력 오류");
