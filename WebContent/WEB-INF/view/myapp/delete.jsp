@@ -18,18 +18,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>회원 정보</h1>
-이름 : ${member.name } <br />
-이메일 : ${member.email } <br />
-나이 : ${member.age } <br />
-
-<br />
-
-<a href="update" class="btn btn-warning">수정</a>
-<a href="delete" class="btn btn-danger">삭제</a>
+<h1>회원 삭제</h1>
+<form action="" method="post">
+암호 : <input type="password" name="password" /> <br />
+<input type="submit" value="삭제"/>
+</form>
+${message }
 </body>
 </html>
-
 
 
 
