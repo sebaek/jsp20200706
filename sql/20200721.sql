@@ -48,6 +48,5 @@ alter table member add column (
 );
 select * from member order by id desc;
 
-update member set name='jane';
 
 
