@@ -1,6 +1,10 @@
 package myapp;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -42,6 +46,19 @@ public class DeleteServlet extends HttpServlet {
 		
 		if (password1.equals(password2)) {
 			//1. db에서 삭제
+			try {
+				Connection con = DriverManager.getConnection("jdbc:apache:commons:dbcp:test1");
+				String sql = "DELETE FROM member WHERE id=?";
+				
+				PreparedStatement ps = con.prepareStatement(sql);
+				ps.setInt(1, mem.getId());
+				ps.executeUpdate();
+				
+				ps.close();
+				con.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 			
 			//2. redirect or forward
 			response.sendRedirect("signup");
