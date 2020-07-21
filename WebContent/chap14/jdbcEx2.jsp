@@ -44,6 +44,12 @@ while (rs.next()) {
 	out.print(" : ");
 	out.print(rs.getInt("age"));
 	out.print("</a>");
+	
+	out.print("<a href='jdbcEx8Delete.jsp?id=");
+	out.print(rs.getInt("id") + "' >");
+	out.print("삭제");
+	out.print("</a>");
+	
 	out.print("<br>");
 }
 // 6. 자원 종료
