@@ -27,7 +27,8 @@ String url = "jdbc:mysql://localhost/test1"
 			+ "?serverTimezone=Asia/Seoul" ;
 String id = "root";
 String pw = "rootpw";
-Connection con = DriverManager.getConnection(url, id, pw);
+//Connection con = DriverManager.getConnection(url, id, pw);
+Connection con = DriverManager.getConnection("jdbc:apache:commons:dbcp:test1");
 
 // 3. statement 생성
 Statement stmt = con.createStatement();
