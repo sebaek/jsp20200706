@@ -3,8 +3,7 @@ package myapp;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.PreparedStatement;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,16 +13,16 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class SignUpServlet
+ * Servlet implementation class UpdateServlet
  */
-@WebServlet("/myapp/signup")
-public class SignUpServlet extends HttpServlet {
+@WebServlet("/myapp/update")
+public class UpdateServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public SignUpServlet() {
+	public UpdateServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -34,8 +33,7 @@ public class SignUpServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-		request.getRequestDispatcher("/WEB-INF/view/myapp/signup.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/view/myapp/update.jsp").forward(request, response);
 	}
 
 	/**
@@ -53,6 +51,9 @@ public class SignUpServlet extends HttpServlet {
 		if (ageStr != null) {
 			age = Integer.valueOf(ageStr);
 		}
+		
+		HttpSession session = request.getSession();
+		Member mem = (Member) session.getAttribute("member");
 
 		try {
 
@@ -62,52 +63,42 @@ public class SignUpServlet extends HttpServlet {
 			Connection con = DriverManager.getConnection("jdbc:apache:commons:dbcp:test1");
 
 			// 3. statement 생성
-//			PreparedStatement ps = con.prepareStatement(sql);
-			Statement stmt = con.createStatement();
+			String sql 
+			= "UPDATE member SET email=?, password=?, name=?, age=? " 
+			+ " WHERE id=? ";
+			PreparedStatement ps = con.prepareStatement(sql);
 
 			// 4. 쿼리 실행
-//			ps.setString(1, email);
-//			ps.setString(2, password);
-//			ps.setString(3, name);
-//			ps.setInt(4, age);
+			ps.setString(1, email);
+			ps.setString(2, password);
+			ps.setString(3, name);
+			ps.setInt(4, age);
+			ps.setInt(5, mem.getId());
 
-			String sql = "INSERT INTO member (email, password, name, age)" 
-				+ " VALUES ('" + email + "', '" + password + "', '"
-				+ name + "', " + age + ")";
-			int cnt = stmt.executeUpdate(sql, new String[]{"id"});
+			int cnt = ps.executeUpdate();
 
 			// 5. 결과 처리
 			if (cnt == 1) {
 				// 정상
 				System.out.println("정상 입력");
-				
-				ResultSet rs = stmt.getGeneratedKeys();
-				
-				if (rs.next()) {
-//					System.out.println("id: " + rs.getInt(1));
-					Member mem = new Member();
-					mem.setAge(age);
-					mem.setName(name);
-					mem.setEmail(email);
-					mem.setPassword(password);
-					mem.setId(rs.getInt(1));
-					
-					HttpSession session = request.getSession();
-					session.setAttribute("member", mem);
-				}
-				
-				
+//				Member mem = new Member();
+				mem.setAge(age);
+				mem.setName(name);
+				mem.setEmail(email);
+				mem.setPassword(password);
+
+//				HttpSession session = request.getSession();
+				session.setAttribute("member", mem);
+
 				response.sendRedirect("member");
-				
-				rs.close();
 			} else {
 				// 오류
 				System.out.println("입력 오류");
-				request.getRequestDispatcher("/WEB-INF/view/myapp/signup.jsp").forward(request, response);
+				request.getRequestDispatcher("/WEB-INF/view/myapp/update.jsp").forward(request, response);
 			}
 
 			// 6. 자원 종료
-			stmt.close();
+			ps.close();
 			con.close();
 
 		} catch (Exception e) {
@@ -116,9 +107,3 @@ public class SignUpServlet extends HttpServlet {
 	}
 
 }
-
-
-
-
-
-
