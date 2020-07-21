@@ -30,29 +30,22 @@ String pw = "rootpw";
 Connection con = DriverManager.getConnection(url, id, pw);
 
 // 3. statement 생성
-Statement stmt = con.createStatement();
+String sql = "UPDATE member SET name=?, age=? WHERE id=?";
+PreparedStatement pstmt = con.prepareStatement(sql);
 
 // 4. 쿼리 실행
-ResultSet rs = stmt.executeQuery("SELECT id, name, age FROM member");
+pstmt.setString(1, "첫번째 이름");
+pstmt.setInt(2, 99);
+pstmt.setInt(3, 1);
+
+int rows = pstmt.executeUpdate();
 
 // 5. 결과 처리
-while (rs.next()) {
-	out.print("<a href='jdbcEx7UpdateForm.jsp?id=" + rs.getInt("id") +"'>");
-	out.print(rs.getInt("id"));
-	out.print(" : ");
-	out.print(rs.getString("name"));
-	out.print(" : ");
-	out.print(rs.getInt("age"));
-	out.print("</a>");
-	out.print("<br>");
-}
-// 6. 자원 종료
-if (rs != null) {
-	rs.close();
-}
+out.print(rows + "개의 행이 업데이트 되었습니다.");
 
-if (stmt != null) {
-	stmt.close();
+// 6. 자원 종료
+if (pstmt != null) {
+	pstmt.close();
 }
 
 if (con != null) {
@@ -64,3 +57,10 @@ if (con != null) {
 %>
 </body>
 </html>
+
+
+
+
+
+
+
