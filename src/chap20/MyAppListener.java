@@ -53,6 +53,7 @@ public class MyAppListener implements ServletContextListener {
 
 	private void initConnectionPool() {
 		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			String jdbcUrl = 
 					"jdbc:mysql://localhost/test1" +
 					"?serverTimezone=Asia/Seoul";
