@@ -67,12 +67,6 @@
   	<servlet-name>servlet3</servlet-name>
   	<servlet-class>chap17.path.UrlPathEx3</servlet-class>
   </servlet>
-  
-  <servlet-mapping>
-  	<servlet-name>servlet1</servlet-name>
-  	<url-pattern>*.do</url-pattern>
-  </servlet-mapping>
-  
   <servlet-mapping>
   	<servlet-name>servlet2</servlet-name>
   	<url-pattern>/foo/bar</url-pattern>
@@ -221,6 +215,21 @@
   	<url-pattern>/*</url-pattern>
   </filter-mapping>   
    <!--  comments  -->
+   
+   <servlet>
+     <servlet-name>ControllerUsingURI</servlet-name>
+     <servlet-class>chap18.ControllerUsingURI</servlet-class>
+     <init-param>
+     	<param-name>configFile</param-name>
+     	<param-value>/WEB-INF/commandHandlerURI.properties</param-value>
+     </init-param>
+     <load-on-startup>1</load-on-startup>
+   </servlet>
+   
+   <servlet-mapping>
+   	 <servlet-name>ControllerUsingURI</servlet-name>
+   	 <url-pattern>*.do</url-pattern>
+   </servlet-mapping>
 </web-app>
 
 
