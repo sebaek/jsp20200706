@@ -230,6 +230,17 @@
    	 <servlet-name>ControllerUsingURI</servlet-name>
    	 <url-pattern>*.do</url-pattern>
    </servlet-mapping>
+   
+   <servlet>
+   	<servlet-name>fileUploadServlet</servlet-name>
+   	<servlet-class>chap23.UploadServlet</servlet-class>
+   	<multipart-config></multipart-config>
+   </servlet>
+   
+   <servlet-mapping>
+   	<servlet-name>fileUploadServlet</servlet-name>
+   	<url-pattern>/upload</url-pattern>
+   </servlet-mapping>
 </web-app>
 
 
